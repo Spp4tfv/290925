@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор паролей</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Генератор паролей</h1>
+        
+        <div class="form-group">
+            <label for="passwordLength">Длина пароля (4-50 символов):</label>
+            <input type="number" id="passwordLength" min="4" max="50" value="12">
+            <div class="error" id="lengthError">Длина должна быть от 4 до 50 символов</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="specialChars">Количество специальных символов (@#+-()?):</label>
+            <input type="number" id="specialChars" min="0" value="2">
+        </div>
+        
+        <div class="form-group">
+            <label for="digits">Количество цифр:</label>
+            <input type="number" id="digits" min="0" value="3">
+        </div>
+        
+        <div class="form-group">
+            <label for="letters">Количество букв (автоматически):</label>
+            <input type="number" id="letters" min="0" value="7" readonly>
+        </div>
+        
+        <div class="password-display" id="passwordDisplay">
+            Нажмите "Сгенерировать"
+        </div>
+        
+        <div class="buttons">
+            <button class="generate-btn" id="generateBtn">Сгенерировать</button>
+            <button class="history-btn" id="historyBtn">История паролей</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="historyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">История паролей</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <ul class="password-list" id="passwordList">
+            </ul>
+            <button class="clear-btn" id="clearHistory">Очистить историю</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
